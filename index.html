@@ -8,80 +8,118 @@
 	<meta name="theme-color" content="#37474F">
 	
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	
 	<style>
-		.default {
-			font-family: 'Roboto', sans-serif;
-			font-weight: bold;
-			font-size: x-large;
-			color: #FFFFFF;
-			text-align: center;
-			text-decoration: none;
-		}
+	body {
+		position: relative; 
+	}
+
+	.default {
+		font-family: 'Roboto', sans-serif;
+		font-size: large;
+		color: #FFFFFF;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.anchor {
+		display: block;
+		position: relative;
+		top: -50px;
+		visibility: hidden;
+	}
+
+	#introduction {padding-top:50px;color: #fff; background-color: #B2DFDB;}
+	#resume {padding-top:50px;height:500px;color: #fff; background-color: #4DB6AC;}
+	#portfolio {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+	#contact {padding-top:50px;height:500px;color: #fff; background-color: #00796B;}
 	</style>
 </head>
-<body style="margin:0;">
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin:0;">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #37474F;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+			</div>
+			<div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="#introduction" class="default">Introduction</a></li>
+						<li><a href="#resume" class="default">Resume</a></li>
+						<li><a href="#portfolio" class="default">Portfolio</a></li>
+						<li><a href="#contact" class="default">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>   
 
 	<!-- HEADER MENU -->
-	<table border=0 width=100% cellpadding="0" cellspacing="0" bgcolor="#37474F" style="position: fixed;" class=default>
+	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#37474F" style="position: fixed;" class=default>
 		<tr>
 			<td>
-				<table align="center" width=100% height=50px style="max-width: 1024px;">
+				<table align="center" width="100%" height="50px" cellpadding="0" cellspacing="0" style="max-width: 1024px;">
 					<tr>
-						<td>
-							<a href="#resume" class=default>Home</a>	
+						<td width="23%">
+							<a href="#introduction" class="default">Introduction</a>	
 						</td>
-						<td>
-							<a href="#resume" class=default>Resume</a>
+						<td width="23%">
+							<a href="#resume" class="default">Resume</a>
 						</td>
-						<td>
-							<a href="#resume" class=default>Projects</a>
+						<td width="23%">
+							<a href="#portfolio" class="default">Portfolio</a>
 						</td>
-						<td>
-							<a href="#resume" class=default>Contact</a>
+						<td width="23%">
+							<a href="#contact" class="default">Contact</a>
+						</td>
+						<td width="8%">
+							<input type="image" src="images/icon_menu.png" height="30px" align="center">
 						</td>
 					</tr>
 				</table>
 			</td>
 		</tr>
-	</table>
+	</table>-->
 
 	<!-- BODY CONTENT -->
-	<table border=0 align="center" width=1000px cellpadding="0" cellspacing="0">
-		<tr>
-			<td height=50px></td>
-		</tr>
+
+	<table border="0" align="center" width="100%" cellpadding="0" cellspacing="0" style="max-width: 1024px;">
 		<tr>		
-			<td bgcolor="#aadcdc" colspan=2> 
-				<font face="Georgia">Hello, my name is Brandon Gabriel Yee and this is my web page 
-				<br><br>
-				
-				<center>
-					<img src="images/HomePic.jpg">
-				</center>
-				<br><br>
-			
-				<hr width="90%" size="3" noshade>
-				<br><br><br>
-				
-				<a href="index.html">
-					<color="#009cff">
+			<td bgcolor="#aadcdc" colspan="2">
+				<div id="introduction" class="container-fluid">
+					<h1>Introduction</h1>
+					<p>Hello, my name is Brandon and this is my web page</p>
+
 					<center>
-						<b>Back To Top</b>
-					</font>
-				</a>  
-		</tr>
-	</table>
+						<img src="images/HomePic.jpg">
+					</center>
+				</div>
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+				<div id="resume" class="container-fluid">
+					<h1>Resume</h1>
+					<p>Future location of my Resume</p>
+				</div>
 
-	<h2 id="resume">
-		Resume
-	</h2>
+				<div id="portfolio" class="container-fluid">
+					<h1>Portfolio</h1>
+					<p>Check out my portfolio</p>
+				</div>
 
-</body>
-</html>
+				<div id="contact" class="container-fluid">
+					<h1>Contact</h1>
+					<p>Contact me!</p>
+				</div>
+			</tr>
+		</table>
+
+	</body>
+	</html>
