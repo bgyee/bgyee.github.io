@@ -18,6 +18,15 @@
 		position: relative; 
 	}
 
+	.website-name {
+		font-family: 'Roboto', sans-serif;
+		font-size: x-large;
+		font-weight: bold;
+		color: #26A69A;
+		text-align: center;
+		text-decoration: none;
+	}
+
 	.default {
 		font-family: 'Roboto', sans-serif;
 		font-size: large;
@@ -33,13 +42,23 @@
 		visibility: hidden;
 	}
 
+	.navbar .navbar-nav {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+
+	.navbar .navbar-collapse {
+		text-align: center;
+	}
+
 	#introduction {padding-top:50px;color: #fff; background-color: #B2DFDB;}
 	#resume {padding-top:50px;height:500px;color: #fff; background-color: #4DB6AC;}
 	#portfolio {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
 	#contact {padding-top:50px;height:500px;color: #fff; background-color: #00796B;}
 	</style>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin:0;">
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin:0; background-color: #607D8B;">
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #37474F;">
 		<div class="container-fluid">
@@ -49,6 +68,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>                        
 				</button>
+				<a class="navbar-brand website-name" href="#">Brandon Yee</a>
+				<input type="image" src="images/icon_menu.png" height="30px" class="navbar-brand">
 			</div>
 			<div>
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -95,12 +116,13 @@
 	<table border="0" align="center" width="100%" cellpadding="0" cellspacing="0" style="max-width: 1024px;">
 		<tr>		
 			<td bgcolor="#aadcdc" colspan="2">
-				<div id="introduction" class="container-fluid">
+				<div id="introduction" class="container-fluid" style="background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center;
+				background-size: 200% auto">
 					<h1>Introduction</h1>
 					<p>Hello, my name is Brandon and this is my web page</p>
 
 					<center>
-						<img src="images/HomePic.jpg">
+						<img src="images/HomePic.jpg" style="padding: 20px;">
 					</center>
 				</div>
 
