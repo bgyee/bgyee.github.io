@@ -52,6 +52,17 @@
 		text-align: center;
 	}
 
+	.navbar-menu {
+		height: 45px;
+		padding: 10px 0px 5px 0px;
+		outline: none;
+	}
+
+	.drawer {
+		position: fixed;
+		height: 100%;
+	}
+
 	#introduction {padding-top:50px;color: #fff; background-color: #B2DFDB;}
 	#resume {padding-top:50px;height:500px;color: #fff; background-color: #4DB6AC;}
 	#portfolio {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
@@ -62,14 +73,17 @@
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #37474F;">
 		<div class="container-fluid">
-			<div class="navbar-header">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand website-name" href="#">Brandon Yee</a>
+			</div>
+			<div class="navbar-header pull-right">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>                        
 				</button>
-				<a class="navbar-brand website-name" href="#">Brandon Yee</a>
-				<input type="image" src="images/icon_menu.png" height="30px" class="navbar-brand">
+
+				<input type="image" src="images/icon_menu.png" class="navbar-menu">
 			</div>
 			<div>
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -83,6 +97,17 @@
 			</div>
 		</div>
 	</nav>   
+
+	<div class="drawer navbar-right" style="padding-top: 50px;">
+		<nav>
+			<ul class="nav nav-tabs nav-stacked">
+				<li><a href="#">Introduction</a></li>
+				<li><a href="#">Resume</a></li>
+				<li><a href="#">Portfolio</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
 
 	<!-- HEADER MENU -->
 	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#37474F" style="position: fixed;" class=default>
@@ -164,8 +189,8 @@
 			    }, 400, function(){
 
 				  	// Add hash (#) to URL when done scrolling (default click behavior)
-				    window.location.hash = hash;
-			  	});
+				  	window.location.hash = hash;
+				});
 			});
 		});
 	</script>
