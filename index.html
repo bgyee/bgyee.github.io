@@ -118,30 +118,57 @@
 			<td bgcolor="#aadcdc" colspan="2">
 				<div id="introduction" class="container-fluid" style="background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center;
 				background-size: cover">
-					<h1>Introduction</h1>
-					<p>Hello, my name is Brandon and this is my web page</p>
+				<h1>Introduction</h1>
+				<p>Hello, my name is Brandon and this is my web page</p>
 
-					<center>
-						<img src="images/HomePic.jpg" style="padding: 20px;">
-					</center>
-				</div>
+				<center>
+					<img src="images/HomePic.jpg" style="padding: 20px;">
+				</center>
+			</div>
 
-				<div id="resume" class="container-fluid">
-					<h1>Resume</h1>
-					<p>Future location of my Resume</p>
-				</div>
+			<div id="resume" class="container-fluid">
+				<h1>Resume</h1>
+				<p>Future location of my Resume</p>
+			</div>
 
-				<div id="portfolio" class="container-fluid">
-					<h1>Portfolio</h1>
-					<p>Check out my portfolio</p>
-				</div>
+			<div id="portfolio" class="container-fluid">
+				<h1>Portfolio</h1>
+				<p>Check out my portfolio</p>
+			</div>
 
-				<div id="contact" class="container-fluid">
-					<h1>Contact</h1>
-					<p>Contact me!</p>
-				</div>
-			</tr>
-		</table>
+			<div id="contact" class="container-fluid">
+				<h1>Contact</h1>
+				<p>Contact me!</p>
+			</div>
+		</tr>
+	</table>
 
-	</body>
-	</html>
+	<script>
+		$(document).ready(function(){
+	  		// Add scrollspy to <body>
+	  		$('body').scrollspy({target: ".navbar", offset: 50});   
+
+			// Add smooth scrolling on all links inside the navbar
+			$("#myNavbar a").on('click', function(event) {
+
+			    // Prevent default anchor click behavior
+			    event.preventDefault();
+
+			    // Store hash
+			    var hash = this.hash;
+
+			    // Using jQuery's animate() method to add smooth page scroll
+			    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			    $('html, body').animate({
+			    	scrollTop: $(hash).offset().top
+			    }, 400, function(){
+
+				  	// Add hash (#) to URL when done scrolling (default click behavior)
+				    window.location.hash = hash;
+			  	});
+			});
+		});
+	</script>
+
+</body>
+</html>
