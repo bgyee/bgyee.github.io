@@ -44,23 +44,29 @@
 
 	.navbar .navbar-nav {
 		display: inline-block;
-		float: none;
+		float: right;
 		vertical-align: top;
-	}
-
-	.navbar .navbar-collapse {
-		text-align: center;
 	}
 
 	.navbar-menu {
 		height: 45px;
-		padding: 10px 0px 5px 0px;
+		padding: 10px 0px 5px 15px;
 		outline: none;
 	}
 
-	.drawer {
+	ul.drawer {
+		list-style-type: none;
+    	overflow: auto;
+		background-color: rgba(55, 71, 79, 0.8);
 		position: fixed;
 		height: 100%;
+		width: 85%;
+		max-width: 256px;
+		right: 0;
+	}
+
+	.navbar-custom-btn-size {
+		width: 128px;
 	}
 
 	#introduction {padding-top:50px;color: #fff; background-color: #B2DFDB;}
@@ -83,7 +89,7 @@
 					<span class="icon-bar"></span>                        
 				</button>
 
-				<input type="image" src="images/icon_menu.png" class="navbar-menu">
+				<input type="image" src="images/icon_menu.png" class="navbar-menu" id="myNavbarMenuBtn">
 			</div>
 			<div>
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -98,16 +104,14 @@
 		</div>
 	</nav>   
 
-	<div class="drawer navbar-right" style="padding-top: 50px;">
-		<nav>
-			<ul class="nav nav-tabs nav-stacked">
-				<li><a href="#">Introduction</a></li>
-				<li><a href="#">Resume</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</div>
+	<nav class="col-sm-3" style="padding-top: 50px;" id="myNavbarMenu">
+		<ul class="drawer nav nav-pills nav-stacked">
+			<li><a href="#worldtravels" class="default" style="text-align: left;">World Travels</a></li>
+			<li><a href="#foodadventures" class="default" style="text-align: left;">Food Adventures</a></li>
+			<li><a href="#athletics" class="default" style="text-align: left;">Athletics</a></li>
+			<li><a href="#other" class="default" style="text-align: left;">Other</a></li>
+		</ul>
+	</nav>
 
 	<!-- HEADER MENU -->
 	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#37474F" style="position: fixed;" class=default>
@@ -190,6 +194,20 @@
 
 				  	// Add hash (#) to URL when done scrolling (default click behavior)
 				  	window.location.hash = hash;
+				});
+			});
+
+			$("#myNavbarMenuBtn").on('click', function(event) {
+
+			    // Prevent default anchor click behavior
+			    event.preventDefault();
+
+			    // Using jQuery's animate() method to add smooth page scroll
+			    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+			    $("myNavbarMenu").animate({
+			    	right: -100px;
+			    }, 400, function(){
+
 				});
 			});
 		});
