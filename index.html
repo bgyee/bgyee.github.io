@@ -16,6 +16,7 @@
 	<style>
 	body {
 		position: relative; 
+		overflow-x: hidden;
 	}
 
 	.website-name {
@@ -35,13 +36,6 @@
 		text-decoration: none;
 	}
 
-	.anchor {
-		display: block;
-		position: relative;
-		top: -50px;
-		visibility: hidden;
-	}
-
 	.navbar .navbar-nav {
 		display: inline-block;
 		float: right;
@@ -58,11 +52,11 @@
 		list-style-type: none;
     	overflow: auto;
 		background-color: rgba(55, 71, 79, 0.9);
-		position: fixed;
+		position: absolute;
 		height: 100%;
 		width: 85%;
 		max-width: 256px;
-		right: 0;
+		right: -256px;
 	}
 
 	.navbar-custom-btn-size {
@@ -104,8 +98,8 @@
 		</div>
 	</nav>   
 
-	<nav class="col-sm-3" style="padding-top: 50px;" id="myNavbarMenu">
-		<ul class="drawer nav nav-pills nav-stacked">
+	<nav style="padding-top: 50px;">
+		<ul class="drawer nav nav-pills nav-stacked" id="myNavbarMenu">
 			<li><a href="#worldtravels" class="default" style="text-align: left;">World Travels</a></li>
 			<li><a href="#foodadventures" class="default" style="text-align: left;">Food Adventures</a></li>
 			<li><a href="#athletics" class="default" style="text-align: left;">Athletics</a></li>
@@ -169,6 +163,7 @@
 				<h1>Contact</h1>
 				<p>Contact me!</p>
 			</div>
+		</td>
 		</tr>
 	</table>
 
@@ -195,6 +190,20 @@
 				  	// Add hash (#) to URL when done scrolling (default click behavior)
 				  	window.location.hash = hash;
 				});
+			});
+
+			$("#myNavbarMenuBtn").on("click", function(e){
+				e.preventDefault();
+
+				var right = $("#myNavbarMenu").css('right');
+				right = right.replace("px", "");
+				var width = $("#myNavbarMenu").width();
+
+				if (right == 0) {
+					$("#myNavbarMenu").animate({right: -1*width});
+				} else {
+					$("#myNavbarMenu").animate({right: 0});
+				}
 			});
 		});
 	</script>
