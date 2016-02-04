@@ -14,63 +14,89 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	
 	<style>
-	body {
-		position: relative; 
-		overflow-x: hidden;
-	}
+		body {
+			position: relative; 
+			overflow-x: hidden;
+		}
 
-	.website-name {
-		font-family: 'Roboto', sans-serif;
-		font-size: x-large;
-		font-weight: bold;
-		color: #26A69A;
-		text-align: center;
-		text-decoration: none;
-	}
+		.website-name {
+			font-family: 'Roboto', sans-serif;
+			font-size: x-large;
+			font-weight: bold;
+			color: #26A69A;
+			text-align: center;
+			text-decoration: none;
+		}
 
-	.default {
-		font-family: 'Roboto', sans-serif;
-		font-size: large;
-		color: #FFFFFF;
-		text-align: center;
-		text-decoration: none;
-	}
+		.default {
+			font-family: 'Roboto', sans-serif;
+			font-size: large;
+			color: #FFFFFF;
+			text-align: center;
+			text-decoration: none;
+		}
 
-	.navbar .navbar-nav {
-		display: inline-block;
-		float: right;
-		vertical-align: top;
-	}
+		.div-class {
+			padding: 25px;
+		}
 
-	.navbar-menu-btn {
-		height: 45px;
-		padding: 10px 0px 5px 15px;
-		outline: none;
-	}
+		.div-header {
+			font-family: 'Roboto', sans-serif;
+			font-size: xx-large;
+			text-align: center;
+			text-decoration: none;
+		}
 
-	ul.drawer {
-		list-style-type: none;
-    	overflow: auto;
-		background-color: rgba(55, 71, 79, 0.9);
-		position: fixed;
-		height: 100%;
-		width: 85%;
-		max-width: 256px;
-		right: -256px;
-	}
+		.div-text {
+			font-family: 'Roboto', sans-serif;
+			font-size: medium;
+			text-decoration: none;
+		}
 
-	.navbar-custom-btn-size {
-		width: 128px;
-	}
+		.navbar .navbar-nav {
+			display: inline-block;
+			float: right;
+			vertical-align: top;
+		}
 
-	#introduction {padding-top:50px; height:500px; color: #fff; background-color: #B2DFDB;}
-	#resume {padding-top:50px; height:500px; color: #fff; background-color: #4DB6AC;}
-	#portfolio {padding-top:50px; height:500px; color: #fff; background-color: #009688;}
-	#contact {padding-top:50px; height:500px; color: #fff; background-color: #00796B;}
-	#worldtravels {padding-top:50px; height:500px; color: #fff; background-color: #B2DFDB;}
-	#foodadventures {padding-top:50px; height:500px; color: #fff; background-color: #4DB6AC;}
-	#athletics {padding-top:50px; height:500px; color: #fff; background-color: #009688;}
-	#other {padding-top:50px; height:500px; color: #fff; background-color: #00796B;}
+		.navbar-menu-btn {
+			height: 45px;
+			padding: 10px 0px 5px 15px;
+			outline: none;
+		}
+
+		ul.drawer {
+			list-style-type: none;
+	    	overflow: auto;
+			background-color: rgba(55, 71, 79, 0.9);
+			position: fixed;
+			height: 100%;
+			width: 85%;
+			max-width: 256px;
+			right: -256px;
+		}
+
+		.navbar-custom-btn-size {
+			width: 128px;
+		}
+
+		#main-div {padding-top:50px;}
+		#introduction-div {height:500px; color: #fff; background-color: #B2DFDB; background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;}
+		#introduction {padding-top:50px; margin-top: -50px;}
+		#resume-div {height:500px; color: #fff; background-color: #4DB6AC;}
+		#resume {padding-top:50px; margin-top: -50px;}
+		#portfolio-div {height:500px; color: #fff; background-color: #009688;}
+		#portfolio {padding-top:50px; margin-top: -50px;}
+		#contact-div {height:500px; color: #fff; background-color: #00796B;}
+		#contact {padding-top:50px; margin-top: -50px;}
+		#worldtravels-div {height:500px; color: #fff; background-color: #B2DFDB;}
+		#worldtravels {padding-top:50px; margin-top: -50px;}
+		#foodadventures-div {height:500px; color: #fff; background-color: #4DB6AC;}
+		#foodadventures {padding-top:50px; margin-top: -50px;}
+		#athletics-div {height:500px; color: #fff; background-color: #009688;}
+		#athletics {padding-top:50px; margin-top: -50px;}
+		#other-div {height:500px; color: #fff; background-color: #00796B;}
+		#other {padding-top:50px; margin-top: -50px;}
 	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin:0; background-color: #607D8B;">
@@ -100,107 +126,68 @@
 				</div>
 			</div>
 		</div>
-	</nav>   
 
-	<nav class="navbar" style="padding-top: 50px;">
 		<ul class="drawer nav nav-pills nav-stacked" id="myNavbarMenu">
 			<li><a href="#worldtravels" class="default" style="text-align: left;">World Travels</a></li>
 			<li><a href="#foodadventures" class="default" style="text-align: left;">Food Adventures</a></li>
 			<li><a href="#athletics" class="default" style="text-align: left;">Athletics</a></li>
 			<li><a href="#other" class="default" style="text-align: left;">Other</a></li>
 		</ul>
-	</nav>
-
-	<!-- HEADER MENU -->
-	<!--<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#37474F" style="position: fixed;" class=default>
-		<tr>
-			<td>
-				<table align="center" width="100%" height="50px" cellpadding="0" cellspacing="0" style="max-width: 1024px;">
-					<tr>
-						<td width="23%">
-							<a href="#introduction" class="default">Introduction</a>	
-						</td>
-						<td width="23%">
-							<a href="#resume" class="default">Resume</a>
-						</td>
-						<td width="23%">
-							<a href="#portfolio" class="default">Portfolio</a>
-						</td>
-						<td width="23%">
-							<a href="#contact" class="default">Contact</a>
-						</td>
-						<td width="8%">
-							<input type="image" src="images/icon_menu.png" height="30px" align="center">
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>-->
+	</nav>   
 
 	<!-- BODY CONTENT -->
 
-	<table border="0" align="center" width="100%" cellpadding="0" cellspacing="0" style="max-width: 1024px;">
-		<tr>		
-			<td bgcolor="#aadcdc" colspan="2">
-				<div id="introduction" class="container-fluid" style="background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center;
-				background-size: cover">
-				<h1>Introduction</h1>
-				<p>Hello, my name is Brandon and this is my web page</p>
+	<div id="main-div" style="width: 100%; max-width: 1024px; margin: 0 auto;">
+		<div id="introduction-div" class="container-fluid div-class">
+			<h1 id="introduction" class="div-header">Introduction</h1>
+			<p class="div-text">Hello, my name is Brandon and this is my web page</p>
+		</div>
 
-			</div>
+		<div id="resume-div" class="container-fluid div-class">
+			<h1 id="resume" class="div-header">Resume</h1>
+			<p class="div-text">Future location of my Resume</p>
+		</div>
 
-			<div id="resume" class="container-fluid">
-				<h1>Resume</h1>
-				<p>Future location of my Resume</p>
-			</div>
+		<div id="portfolio-div" class="container-fluid div-class">
+			<h1 id="portfolio" class="div-header">Portfolio</h1>
+			<p class="div-text">Check out my portfolio</p>
+		</div>
 
-			<div id="portfolio" class="container-fluid">
-				<h1>Portfolio</h1>
-				<p>Check out my portfolio</p>
-			</div>
+		<div id="contact-div" class="container-fluid div-class">
+			<h1 id="contact" class="div-header">Contact</h1>
+			<p class="div-text">Contact me!</p>
+		</div>
 
-			<div id="contact" class="container-fluid">
-				<h1>Contact</h1>
-				<p>Contact me!</p>
-			</div>
+		<div id="worldtravels-div" class="container-fluid div-class">
+			<h1 id="worldtravels" class="div-header">World Travels</h1>
+			<p class="div-text">Vietnam, here I come!</p>
+		</div>
 
-			<div id="worldtravels" class="container-fluid">
-				<h1>World Travels</h1>
-				<p>Vietnam, here I come!</p>
-			</div>
+		<div id="foodadventures-div" class="container-fluid div-class">
+			<h1 id="foodadventures" class="div-header">Food Adventures</h1>
+			<p class="div-text">Yummm :)</p>
+		</div>
 
-			<div id="foodadventures" class="container-fluid">
-				<h1>Food Adventures</h1>
-				<p>Yummm :)</p>
-			</div>
+		<div id="athletics-div" class="container-fluid div-class">
+			<h1 id="athletics" class="div-header">Athletics</h1>
+			<p class="div-text">Push-ups!!!</p>
+		</div>
 
-			<div id="athletics" class="container-fluid">
-				<h1>Athletics</h1>
-				<p>Push-ups!!!</p>
-			</div>
-
-			<div id="other" class="container-fluid">
-				<h1>Other</h1>
-				<p>Other stuff...</p>
-			</div>
-		</td>
-		</tr>
-	</table>
+		<div id="other-div" class="container-fluid div-class">
+			<h1 id="other" class="div-header">Other</h1>
+			<p class="div-text">Other stuff...</p>
+		</div>
+	</div>
 
 	<script>
-		$(document).ready(function(){
-	  		$('body').scrollspy({target: ".navbar", offset: 50});   
-
+		$(document).ready(function(){  
 			$(".navbar a").on('click', function(event) {
-
 			    event.preventDefault();
 			    var hash = this.hash;
 
 			    $('html, body').animate({
 			    	scrollTop: $(hash).offset().top
 			    }, 400, function(){
-
 				  	window.location.hash = hash;
 				});
 			});
@@ -213,9 +200,9 @@
 				var width = $("#myNavbarMenu").width();
 
 				if (right == 0) {
-					$("#myNavbarMenu").animate({right: -1*width});
+					$("#myNavbarMenu").animate({right: -1*width}, 100);
 				} else {
-					$("#myNavbarMenu").animate({right: 0});
+					$("#myNavbarMenu").animate({right: 0}, 100);
 				}
 			});
 		});
