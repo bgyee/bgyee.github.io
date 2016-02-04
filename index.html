@@ -42,7 +42,7 @@
 		vertical-align: top;
 	}
 
-	.navbar-menu {
+	.navbar-menu-btn {
 		height: 45px;
 		padding: 10px 0px 5px 15px;
 		outline: none;
@@ -52,7 +52,7 @@
 		list-style-type: none;
     	overflow: auto;
 		background-color: rgba(55, 71, 79, 0.9);
-		position: absolute;
+		position: fixed;
 		height: 100%;
 		width: 85%;
 		max-width: 256px;
@@ -63,10 +63,14 @@
 		width: 128px;
 	}
 
-	#introduction {padding-top:50px;color: #fff; background-color: #B2DFDB;}
-	#resume {padding-top:50px;height:500px;color: #fff; background-color: #4DB6AC;}
-	#portfolio {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
-	#contact {padding-top:50px;height:500px;color: #fff; background-color: #00796B;}
+	#introduction {padding-top:50px; height:500px; color: #fff; background-color: #B2DFDB;}
+	#resume {padding-top:50px; height:500px; color: #fff; background-color: #4DB6AC;}
+	#portfolio {padding-top:50px; height:500px; color: #fff; background-color: #009688;}
+	#contact {padding-top:50px; height:500px; color: #fff; background-color: #00796B;}
+	#worldtravels {padding-top:50px; height:500px; color: #fff; background-color: #B2DFDB;}
+	#foodadventures {padding-top:50px; height:500px; color: #fff; background-color: #4DB6AC;}
+	#athletics {padding-top:50px; height:500px; color: #fff; background-color: #009688;}
+	#other {padding-top:50px; height:500px; color: #fff; background-color: #00796B;}
 	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50" style="margin:0; background-color: #607D8B;">
@@ -83,7 +87,7 @@
 					<span class="icon-bar"></span>                        
 				</button>
 
-				<input type="image" src="images/icon_menu.png" class="navbar-menu" id="myNavbarMenuBtn">
+				<input type="image" src="images/icon_menu.png" class="navbar-menu-btn" id="myNavbarMenuBtn">
 			</div>
 			<div>
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -98,7 +102,7 @@
 		</div>
 	</nav>   
 
-	<nav style="padding-top: 50px;">
+	<nav class="navbar" style="padding-top: 50px;">
 		<ul class="drawer nav nav-pills nav-stacked" id="myNavbarMenu">
 			<li><a href="#worldtravels" class="default" style="text-align: left;">World Travels</a></li>
 			<li><a href="#foodadventures" class="default" style="text-align: left;">Food Adventures</a></li>
@@ -144,9 +148,6 @@
 				<h1>Introduction</h1>
 				<p>Hello, my name is Brandon and this is my web page</p>
 
-				<center>
-					<img src="images/HomePic.jpg" style="padding: 20px;">
-				</center>
 			</div>
 
 			<div id="resume" class="container-fluid">
@@ -163,37 +164,49 @@
 				<h1>Contact</h1>
 				<p>Contact me!</p>
 			</div>
+
+			<div id="worldtravels" class="container-fluid">
+				<h1>World Travels</h1>
+				<p>Vietnam, here I come!</p>
+			</div>
+
+			<div id="foodadventures" class="container-fluid">
+				<h1>Food Adventures</h1>
+				<p>Yummm :)</p>
+			</div>
+
+			<div id="athletics" class="container-fluid">
+				<h1>Athletics</h1>
+				<p>Push-ups!!!</p>
+			</div>
+
+			<div id="other" class="container-fluid">
+				<h1>Other</h1>
+				<p>Other stuff...</p>
+			</div>
 		</td>
 		</tr>
 	</table>
 
 	<script>
 		$(document).ready(function(){
-	  		// Add scrollspy to <body>
 	  		$('body').scrollspy({target: ".navbar", offset: 50});   
 
-			// Add smooth scrolling on all links inside the navbar
-			$("#myNavbar a").on('click', function(event) {
+			$(".navbar a").on('click', function(event) {
 
-			    // Prevent default anchor click behavior
 			    event.preventDefault();
-
-			    // Store hash
 			    var hash = this.hash;
 
-			    // Using jQuery's animate() method to add smooth page scroll
-			    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
 			    $('html, body').animate({
 			    	scrollTop: $(hash).offset().top
 			    }, 400, function(){
 
-				  	// Add hash (#) to URL when done scrolling (default click behavior)
 				  	window.location.hash = hash;
 				});
 			});
 
-			$("#myNavbarMenuBtn").on("click", function(e){
-				e.preventDefault();
+			$("#myNavbarMenuBtn").on("click", function(event){
+				event.preventDefault();
 
 				var right = $("#myNavbarMenu").css('right');
 				right = right.replace("px", "");
