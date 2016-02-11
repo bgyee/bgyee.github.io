@@ -49,8 +49,9 @@
 
 		.div-text {
 			font-family: 'Roboto', sans-serif;
-			font-size: medium;
+			font-size: large;
 			text-decoration: none;
+			text-align: center;
 		}
 
 		.navbar .navbar-nav {
@@ -80,8 +81,17 @@
 			width: 128px;
 		}
 
+		.ellipsis {
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		.ellipsis.multiline {
+			white-space: normal;
+		}
+
 		#main-div {padding-top:50px;}
-		#introduction-div {height:500px; color: #fff; background-color: #B2DFDB; background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover;}
+		#introduction-div {height:500px; color: #fff; background-color: #B2DFDB; background-image: url('images/MontRoyalPanorama.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; padding-left: 15%; padding-right: 15%; padding-top: 50px; padding-bottom: 50px;}
 		#introduction {padding-top:50px; margin-top: -50px;}
 		#resume-div {height:500px; color: #fff; background-color: #4DB6AC;}
 		#resume {padding-top:50px; margin-top: -50px;}
@@ -138,9 +148,12 @@
 	<!-- BODY CONTENT -->
 
 	<div id="main-div" style="width: 100%; max-width: 1024px; margin: 0 auto;">
-		<div id="introduction-div" class="container-fluid div-class">
+		<div id="introduction-div" class="container-fluid div-class ellipsis multiline">
 			<h1 id="introduction" class="div-header">Introduction</h1>
-			<p class="div-text">Hello, my name is Brandon and this is my web page</p>
+			<br/>
+			<p class="div-text">Hey, my name is Brandon Gabriel Yee and this is my web page. It's a current work-in-progress. I am 3A Computer Engineering student at the University of Waterloo, but I am currently taking a year off to explore what I want to do with my future. I have worked at TDA Inc., The Weather Network, and Zynga Inc. as a co-op job. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et eros sit amet diam ullamcorper convallis sit amet ultricies ligula. Duis dictum eros ac nisi molestie scelerisque. Phasellus lacinia neque sit amet purus imperdiet, vel dignissim neque interdum. Sed urna nisl, aliquet quis quam ut, rutrum convallis nunc. Vivamus id suscipit arcu. Quisque nunc orci, blandit vel fringilla sed, semper in dui. Vestibulum eu dignissim justo. Vivamus at augue sem. Sed vehicula ut ante quis rhoncus. Maecenas tempor fermentum odio, sit amet tristique tortor dignissim convallis. Nulla faucibus eget velit eu mattis. Morbi blandit ex nec nisl volutpat, vitae vehicula lectus efficitur. Pellentesque laoreet dui vitae metus sollicitudin, nec dapibus turpis dignissim. Donec eleifend augue sed cursus tincidunt. Morbi venenatis fringilla est quis lobortis.</p>
+			<!--<br/>
+			<a href="#" class="default" style="text-align: center;">READ MORE</a>-->
 		</div>
 
 		<div id="resume-div" class="container-fluid div-class">
@@ -155,7 +168,7 @@
 
 		<div id="contact-div" class="container-fluid div-class">
 			<h1 id="contact" class="div-header">Contact</h1>
-			<p class="div-text">Contact me!</p>
+			<p class="div-text">Contact me through LinkedIn, Email or Google+!</p>
 		</div>
 
 		<div id="worldtravels-div" class="container-fluid div-class">
@@ -202,10 +215,14 @@
 				if (right == 0) {
 					$("#myNavbarMenu").animate({right: -1*width}, 100);
 				} else {
-					$("#myNavbarMenu").animate({right: 0}, 100);
+					$("#myNavbarMenu").animate({right: 0}, 150);
 				}
 			});
 		});
+	</script>
+	<script type="text/javascript" src="/js/jquery.ellipsis.js"></script>
+	<script type="text/javascript">
+	$(".ellipsis").ellipsis();
 	</script>
 
 </body>
