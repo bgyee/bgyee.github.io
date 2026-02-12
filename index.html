@@ -3,123 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 Availability Picker</title>
+    <title>Nothing to See Here</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; max-width: 900px; margin: 20px auto; padding: 20px; background-color: #f8f9fa; color: #333; }
-        h1 { text-align: center; color: #2c3e50; margin-bottom: 5px; }
-        
-        .setup-section { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: center; }
-        input[type="text"] { padding: 12px; width: 250px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; outline: none; }
-        
-        .counter-box { font-size: 1.2em; font-weight: bold; color: #007BFF; margin-top: 10px; }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222; /* Dark background for a clean look */
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
 
-        .controls { position: sticky; top: 10px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; display: flex; gap: 10px; justify-content: center; z-index: 100; }
-        
-        .week-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
-        .week-card { background: white; border: 1px solid #ddd; padding: 15px; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; }
-        .week-card.selected { background-color: #007BFF; color: white; border-color: #0056b3; }
-        .week-card:hover { transform: translateY(-3px); border-color: #007BFF; }
-        
-        button { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-        .btn-export { background: #28a745; color: white; }
-        .btn-clear { background: #dc3545; color: white; }
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 
-    <h1>📅 2026 Availability</h1>
-    
-    <div class="setup-section">
-        <label for="userName"><strong>Enter Your Name:</strong></label><br><br>
-        <input type="text" id="userName" placeholder="e.g. Alex Smith" oninput="saveName()"><br>
-        <div class="counter-box">Weeks Selected: <span id="count">0</span></div>
-    </div>
+    <div class="tenor-gif-embed" data-postid="16295909" data-share-method="host" data-aspect-ratio="1.33333" data-width="50%"><a href="https://tenor.com/view/the-simpsons-homer-simpson-nothing-to-see-here-simpsons-bush-gif-16295909">The Simpsons Homer Simpson GIF</a>from <a href="https://tenor.com/search/the+simpsons-gifs">The Simpsons GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
-    <div class="controls">
-        <button class="btn-export" onclick="exportToFile()">📥 Export Free Weeks</button>
-        <button class="btn-clear" onclick="clearAll()">🗑️ Clear Selections</button>
-    </div>
-
-    <div id="weeks" class="week-grid"></div>
-
-    <script>
-        const container = document.getElementById('weeks');
-        const nameInput = document.getElementById('userName');
-        const countDisplay = document.getElementById('count');
-        
-        nameInput.value = localStorage.getItem('user_name_2026') || "";
-
-        function saveName() {
-            localStorage.setItem('user_name_2026', nameInput.value);
-        }
-
-        function updateCounter() {
-            const selectedCount = document.querySelectorAll('.week-card.selected').length;
-            countDisplay.innerText = selectedCount;
-        }
-
-        const firstSaturday = new Date(2026, 0, 3); 
-
-        for (let i = 0; i < 52; i++) {
-            const sat = new Date(firstSaturday);
-            sat.setDate(firstSaturday.getDate() + (i * 7));
-            
-            const sun = new Date(sat);
-            sun.setDate(sat.getDate() + 8); 
-
-            // Changed "–" to a standard keyboard "-"
-            const rangeText = `${sat.toLocaleDateString(undefined, {month: 'short', day: 'numeric'})} - ${sun.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'})}`;
-            
-            const div = document.createElement('div');
-            div.className = 'week-card';
-            div.id = `week2026-${i}`;
-            
-            if (localStorage.getItem(`week2026-${i}`) === 'true') div.classList.add('selected');
-
-            div.innerHTML = `<strong>Week ${i + 1}</strong><br><small>${rangeText}</small>`;
-            
-            div.onclick = () => {
-                div.classList.toggle('selected');
-                localStorage.setItem(`week2026-${i}`, div.classList.contains('selected'));
-                updateCounter();
-            };
-            container.appendChild(div);
-        }
-
-        // Initial count check
-        updateCounter();
-
-        function exportToFile() {
-            const name = nameInput.value.trim() || "Anonymous";
-            const selectedCards = Array.from(document.querySelectorAll('.week-card.selected'));
-            
-            if (selectedCards.length === 0) return alert("Please select some weeks first!");
-
-            let content = `2026 AVAILABILITY REPORT\n`;
-            content += `Name: ${name}\n`;
-            content += `Total Weeks: ${selectedCards.length}\n`;
-            content += "=".repeat(30) + "\n\n";
-            
-            selectedCards.forEach(el => {
-                // Formatting the string clearly for the .txt file
-                content += el.innerText.replace('\n', ': ') + "\n";
-            });
-
-            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `Availability_2026_${name.replace(/\s+/g, '_')}.txt`;
-            a.click();
-        }
-
-        function clearAll() {
-            if(confirm("Clear everything?")) {
-                localStorage.clear();
-                nameInput.value = "";
-                document.querySelectorAll('.week-card').forEach(el => el.classList.remove('selected'));
-                updateCounter();
-            }
-        }
-    </script>
 </body>
 </html>
